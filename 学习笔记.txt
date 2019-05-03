@@ -1,0 +1,45 @@
+1 ES6的开发环境搭建
+可以使用webpack和babel
+这里采用babel的方式
+1 建立工程目录
+就是自己的文档，和编译后存放的文档目录。
+新建index.html文件。这个文件引入的js要引入打包编译后的js
+2 初始化项目
+1）npm init （这里初始化自动创建package.json（https://javascript.ruanyifeng.com/nodejs/packagejson.html）  https://my.oschina.net/dkvirus/blog/1068813）
+3 全局安装Babel-cli
+npm install -g babel-cli
+4 本地安装babel-preset-es2015 和 babel-cli
+npm install --save-dev babel-preset-es2015 babel-cli
+5 在根目录下新建.babelrc文件
+{
+    "presets":[
+        "es2015"
+    ],
+    "plugins":[]
+}
+6 babel src/index.js -o dist/index.js
+
+
+ES6的语法
+第2节：新的声明方式
+let var 的区别，这个视频讲的比较简单
+1 作用范围：
+let 所声明的变量只能在块级作用域中有效
+var 所声明的变量至少要在一个函数作用域内才有效
+
+2 变量提升
+var 存在变量提升，会将声明提升到作用域的顶级，赋值操作留在原地
+3 暂时性死区
+在块级作用域内使用Let声明变量时，let会劫持当前作用域，使得当前区块对该变量形成一个封闭作用域。（也就是说，该变量无视区块外的同名变量。）
+但是，又由于let不存在变量提升。所以： 
+Var a=1; 
+f(true){  a=2;//出错 let a;  }  上述代码出现错误：not defined
+4 不允许出现重复调用
+Let不可以在同一作用域内重复声明同一个变量，也不可以和var,const变量名重复
+
+
+这牵扯到了js作用域的问题，后面要进行补充，现在我能知道的，在块级作用域里有效,for循环的时候不用闭包处理，直接let定义就好
+//////////////////////////////////////////////////////////////////////////
+
+第3节变量的结构赋值
+1 数组的结构赋值
