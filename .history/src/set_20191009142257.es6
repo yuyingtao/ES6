@@ -2,7 +2,7 @@
  * @Author: yuyingtao 
  * @Date: 2019-10-08 17:44:26 
  * @Last Modified by: yuyingtao
- * @Last Modified time: 2019-10-09 14:23:43
+ * @Last Modified time: 2019-10-09 14:10:19
  */
 // Set数据结构 
 // set 声明
@@ -23,5 +23,3 @@ console.log(setA.has("mm"))
 for(let item of setA){
   console.log(item)
 }
-// size 属性 size属性可以获得Set值的数量。
-console.log(setA.size)
